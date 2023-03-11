@@ -1,7 +1,11 @@
 revenue = int(input('Введите выручку фирмы: '))
 costs = int(input('Введите издержки фирмы: '))
 
-if revenue > costs:
+
+
+if revenue == costs:
+    print(f'Выручка равна издержке.')
+elif revenue > costs:
     print(f'Финансовый результат - прибыль. Ее величина: {revenue - costs}')
     print(f'Рентабельность выручки = {costs / revenue}')
     count_employees = int(input('Введите численность сотрудников фирмы: '))
