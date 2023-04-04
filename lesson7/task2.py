@@ -14,17 +14,17 @@
 # Например: 20м*5000м*25кг*0.05м = 125000 кг = 125 т
 
 class Road:
+    weight_unit = 25
+    thickness = 0.05
 
     def __init__(self, length, width):
         self._length = length
         self._width = width
 
-    def weight_asphalt(self, weight_unit, thickness):
-        self.weight_unit = weight_unit
-        self.thickness = thickness
-        return self._length * self._width * self.weight_unit * self.thickness
+    def weight_asphalt(self):
+        return self._length * self._width * Road.weight_unit * Road.thickness
 
 
 a = Road(20, 5000)
 
-print(a.weight_asphalt(25, 0.05))
+print(a.weight_asphalt())
