@@ -41,14 +41,20 @@ def write_order_to_json(item, quantity, price, buyer, date):
         objs = json.loads(j_file_content)
 
     if objs == {}:  # проверяем, если файл пустой (т.е. только {})
-        with open('orders1.json', 'w') as j_file:
+        with open('orders1.json', 'w', encoding='utf-8') as j_file:
             json.dump(order_dict, j_file, indent=4)
     else:
         for el in objs.values():
             el.append(t_order_dict)
-        with open('orders1.json', 'w') as j_file:
+        with open('orders1.json', 'w', encoding='utf-8') as j_file:
             json.dump(objs, j_file, indent=4)
 
 
 write_order_to_json('scaner', '1', '6000', 'Petrov', '06.06.2001')
 write_order_to_json('computer', '2', '50000', 'Sidorov', '25.12.2005')
+
+with open('orders1.json') as f_n:
+    objs = json.load(f_n)
+
+for section, commands in objs.items():
+    print(section, commands)

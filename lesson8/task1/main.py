@@ -39,8 +39,6 @@ os_code_list, os_type_list. В этой же функции создать гл�
 import os
 import csv
 
-directory = 'D:/GB/Python/lessons/venv/Python_GB/lesson8/task1'
-
 
 def filter_array(array, first_index):
     t_arr = [array[i].split(': ') for i in range(first_index, len(array), 4)]
@@ -84,14 +82,15 @@ def get_data(directory):
 
 def write_to_csv(path):
     data = get_data(directory)
-    with open(path, 'w') as c_file:
+    with open(path, 'w', encoding='utf-8') as c_file:
         c_file_writer = csv.writer(c_file)
         for row in data:
             c_file_writer.writerow(row)
-    with open(path) as c_file:
+    with open(path, encoding='utf-8') as c_file:
         print(c_file.read())
 
 
+directory = 'D:/GB/Python/lessons/venv/Python_GB/lesson8/task1'
 write_to_csv('data_report1.csv')
 
 """ Внизу уже было """
