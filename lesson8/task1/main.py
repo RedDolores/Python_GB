@@ -90,7 +90,7 @@ def write_to_csv(path):
         print(c_file.read())
 
 
-directory = 'D:/GB/Python/lessons/venv/Python_GB/lesson8/task1'
+directory = '../task1/'
 write_to_csv('data_report1.csv')
 
 """ Внизу уже было """
